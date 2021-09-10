@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 1</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+
+
+    $(function(){
+       
+        $("#animate_kanan").click(function(){
+            //$("button").removeClass("btn");
+            $("button").css("font-size", "14px");
+            $("#div4").animate({
+                left : '+=250px',
+            });
+        });
+        $("#animate_kiri").click(function(){
+            $("#div4").animate({
+                left :'-=250px', 
+            });
+        });
+        $("#animate_atas").click(function(){
+            $("#div4").animate({
+                top :'-=250px', 
+            });
+        });
+        $("#animate_bawah").click(function(){
+            $("#div4").animate({
+                top :'+=250px', 
+            });
+        });
+        $("button").addClass("btn");
+  
+    })
+    </script>
+</head>
+
+<style type="text/css">
+    body, .div4 {
+    text-align: center;
+    background: url(img/background.jpg);
+    }
+    
+</style>
+
+<style>
+    .btn {
+    background: pink;
+    color: black;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    }
+
+    #div4 {
+        top: 150px;
+        
+    }
+    
+</style>
+
+<body>
+
+    <button id="animate_kanan">Kanan</button>
+    <button id="animate_kiri">Kiri</button>
+    <button id="animate_atas">Atas</button>
+    <button id="animate_bawah">Bawah</button><br><br>
+
+    <div>
+        <img src="img/daco.png" alt="Green car" id="div4" class="car" style="width:150px;height:150px;position: absolute;"
+    </div>
+ 
+</body>    
+</html>
+
+

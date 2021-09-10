@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latihan 1</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+
+
+    $(function(){
+        $("#hilang").click(function(){
+            $("#div1").fadeOut();
+            $("#div2").fadeOut(1000);
+            $("#div3").fadeOut();
+        });
+        $("#muncul").click(function(){
+            $("#div1").fadeIn(3000);
+            $("#div2").fadeIn();
+            $("#div3").fadeIn();
+        });
+        $("#toggle").click(function(){
+            $("#div1").toggle(1000);
+            $("#div2").toggle();
+            $("#div3").toggle();
+        });
+        $("#fadeto").click(function(){
+            $("#div1").fadeTo(1000, 0.3);
+            $("#div2").fadeTo();
+            $("#div3").fadeTo();
+        });
+        $("#slideup").click(function(){
+            $("#div1").slideUp(1000);
+            $("#div2").slideUp();
+            $("#div3").slideUp();
+        });
+        $("#slidedown").click(function(){
+            $("#div1").slideDown(1000);
+            $("#div2").slideDown();
+            $("#div3").slideDown();
+        });
+        $("#slidetoggle").click(function(){
+            $("#div1").slideToggle(1000);
+            $("#div2").slideToggle();
+            $("#div3").slideToggle();
+        });
+        $("#animate_kanan").click(function(){
+            //$("button").removeClass("btn");
+            $("button").css("font-size", "14px");
+            $("#div4").animate({
+                left : '+=250px',
+            });
+        });
+        $("#animate_kiri").click(function(){
+            $("#div4").animate({
+                left :'-=250px', 
+            });
+        });
+        $("#animate_atas").click(function(){
+            $("#div4").animate({
+                top :'-=250px', 
+            });
+        });
+        $("#animate_bawah").click(function(){
+            $("#div4").animate({
+                top :'+=250px', 
+            });
+        });
+        $("button").addClass("btn");
+  
+    })
+    </script>
+</head>
+
+
+<style>
+    .btn {
+    background: orange;
+    color: white;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    }
+</style>
+
+<body>
+    <button id="hilang">Hilang</button>
+    <button id="muncul">Muncul</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadeto">FadeTo</button>
+    <button id="slideup">SlideUp</button>
+    <button id="slidedown">SlideDown</button>
+    <button id="slidetoggle">SlideToggle</button><br><br>
+    <div id="div1" style="width:50px;height:50px;background:red;"></div><br>
+    <div id="div2" style="width:50px;height:50px;background:green;"></div><br>
+    <div id="div3" style="width:50px;height:50px;background:blue;"></div><br>
+
+    <button id="animate_kanan">Kanan</button>
+    <button id="animate_kiri">Kiri</button>
+    <button id="animate_atas">Atas</button>
+    <button id="animate_bawah">Bawah</button><br><br>
+    <div id="div4" style="width:50px;height:50px;background: #999;position: absolute;"></div><br>
+
+</body>    
+</html>

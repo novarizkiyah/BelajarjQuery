@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>jQuery Race Car</title>
+        
+        <link rel="stylesheet" href="css/normalize.css">
+    </head>
+
+    <style type="text/css">
+        body {
+        text-align: center;
+        }
+        #racetrack {
+        background: url('img/road.jpg') center left repeat-x;
+        height: 330px;
+        border-right: 10px dashed white;
+        box-sizing: border-box;
+        margin: 40px 0;
+        }
+        .car {
+        display: block;
+        position: relative;
+        }
+        #car1 {
+        top: 30px;
+        }
+        #car2 {
+        top: 100px;
+        }
+        #raceInfoContainer {
+        width: 80%;
+        margin: 40px auto 0;
+        background: #333;
+        height: 200px;
+        }
+        #raceInfoContainer h2 {
+        color: white;
+        text-transform: uppercase;
+        border-bottom: solid 1px white;
+        padding: 20px 0;
+        }
+        .raceInfo {
+        font-size: 24px;
+        font-weight: bold;
+        color: white;
+        width: 50%;
+        float: left
+        }
+        #raceInfo span {
+        display: block;
+        font-weight: normal;
+        font-size: 18px;
+        color: white;
+        }
+        #raceInfo1 {
+        color: #77b82f;
+        }
+        #raceInfo2 {
+        color: #b82f3e;
+        }
+        input[type="button"] {
+        background: blue;
+        color: white;
+        padding: 10px 20px;
+        border: solid 1px #444;
+        }
+        input#reset {
+        background: red;
+        color: white;
+        }
+    </style>
+
+    <body id="race">
+        <h1>jQuery Race Car</h1>
+        
+        <input type="button" value="Race!" id="go">
+        <input type="button" value="Reset" id="reset">
+        
+        <div id="racetrack">
+            <img src="img/car1.png" alt="Green car" id="car1" class="car">
+            <img src="img/car2.png" alt="Red car" id="car2" class="car">
+        </div>
+        
+        <div id="raceInfoContainer" class="clearfix">
+            <h2>Results</h2>
+            <div id="raceInfo1" class="raceInfo">Car 1<span></span></div>
+            <div id="raceInfo2" class="raceInfo">Car 2<span></span></div>
+        </div>
+        
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("#go").click(function() {
+                    var lebar_mobil = $("#car1").width();
+                    var lebar_jalur = $(window).width() - lebar_mobil;
+
+                    var raceTime1 = Math.floor((Math.random() * 5000) + 1);
+                    var raceTime2 = Math.floor((Math.random() * 5000) + 1);
+                    
+                    var isComplete = false;
+                    var place = "first";
+                    
+                    function checkIfComplete() {
+                        if (isComplete == false) {
+                            isComplete == true;
+                        } else {
+                            place = "second";
+                        }
+                    }
+
+                    $("#car1").animate({left: lebar_jalur}, raceTime1, function() {
+                    checkIfComplete();
+                    $("#raceInfo1 span").text('Finished in ' + place + ' place and clocked in a ' + raceTime1 + ' miliseconds!');
+                    });
+
+                    $("#car2").animate({left: lebar_jalur}, raceTime2, function() {
+                    checkIfComplete();
+                    $("#raceInfo2 span").text('Finished in ' + place + ' place and clocked in a ' + raceTime2 + ' miliseconds!');
+                    });
+
+                    $("#reset").click(function() {
+                        $(".car").css("left", "0");
+                        $(".raceInfo span").text("");
+                    });
+                });
+            });
+        </script>
+    </body>
+    
+</html>
+

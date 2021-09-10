@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event jQuery</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            // $("button").click(function() {
+            //      alert("Nova Cantik");
+            // });
+            // $("button").dblclick(function() {
+            //     alert("Nova Keren");
+            // });
+            // $("form").submit(function() {
+            //     alert("Data Terkirim");
+            // });
+
+            //Efent Focus
+            // $("form").submit(function() {
+            //     $("#nama").focus();
+            //     return false;
+            // });
+            $("select").change(function() {
+                $("#nama_daerah").val($(this).val());
+            });
+            // $("button").mouseenter(function() {
+            //     $(this).css("background", "pink");
+            //     $(this).css("padding", "10px 20px");
+            // });
+            // $("button").mouseleave(function() {
+            //     $(this).css("background", "grey");
+            //     $(this).css("padding", "0px");
+            // });
+
+            //Efent hover
+            // $("button").hover(function() {
+            //     // $(this).css("background", "blue");
+            //     // $(this).css("padding", "10px 20px");
+            //     $(this).fadeOut(2000);
+            //     $(this).fadeIn(2000);
+            // });
+            $("form").submit(function(e) {
+                e.preventDefault();
+                //alert(e.type);
+            });
+
+            $("#nama_daerah").keydown(function(e) {
+                $("p").html(e.type + ":" + e.which);
+                if (e.which ==13) {
+                    $("#umur").focus();
+                }
+            });
+            $("input").keydown(function() {
+                $(this).css("background", "blue");
+                $(this).css("color", "white");
+            });
+            $("input").keyup(function() {
+                $(this).css("background", "red");
+                $(this).css("color", "white");
+            });
+            $("input").keypress(function() {
+                $(this).css( "background", "yellow");
+                $(this).css("color", "white");
+            });
+        });
+    // $(document).ready(function(){
+    //     $("button").dblclick(function(){
+    //         alert("The paragraph was double-clicked.");
+    //     });
+    // });
+    </script>
+
+</head>  
+<body>
+    <form>
+        <!-- <input type="text" name="nama" id="nama"> -->
+        <select>
+            <option>Pilih daerah</option>
+            <option value="jakarta">Jakarta</option>
+            <option value="bekasi">Bekasi</option>
+            <option value="tangerang">Tangerang</option>
+            <option value="depok">Depok</option>
+            <option value="bogor">Bogor</option>
+            </select>
+            <input type="text" name="nama" id="nama_daerah">
+            <input type="text" name="umur" id="umur">
+            <p></p>
+        <button type="submit">Klik</button>
+    </form>
+</body>  
+</html>
+

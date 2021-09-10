@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Form</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/validation.js"></script>
+</head>
+<body>
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="images/logo_white.png" alt=""/>
+                <h3>Selamat Datang</h3>
+                <p>jQuery Validation System Babastudio</p>
+                <input type="submit" name="" value="Masuk"/><br/>
+            </div>
+            <div class="col-md-9 register-right">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <form id="pendaftaran">
+                            <h3 class="register-heading">Form Pendaftaran</h3>
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="First Name *" id="firstname" value="" />
+                                        <p id="firstname-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Last Name *" id="lastname" value="" />
+                                        <p id="lastname-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Password *" value="" id="password" />
+                                        <p id="password-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control"  placeholder="Confirm Password *" id="confpassword" value="" />
+                                        <p id="confpassword-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="checkbox" class="form-control" id="setuju" /><p>Saya menyetujui syarat dan ketentuan yang berlaku</p>
+                                        <p id="setuju-error" class="error"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email *" id="mail" value="" />
+                                        <p id="mail-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" id="phone" value="" />
+                                        <p id="phone-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <select class="form-control" id="security">
+                                            <option class="hidden"  selected disabled>Pilih pertanyaan keamanan kamu</option>
+                                            <option>Tanggal berapa kamu lahir?</option>
+                                            <option>Berapa nomor handphone kamu?</option>
+                                            <option>Apa nama hewan peliharaan kamu?</option>
+                                        </select>
+                                        <p id="security-error" class="error"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" id="answer" />
+                                        <p id="answer-error" class="error"></p>
+                                    </div>
+                                    <input type="submit" class="btnRegister"  value="Daftar"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
